@@ -93,7 +93,7 @@ int main()
   cin >> role;
   NetStreammer streammer;
   _streammer = &streammer;
-  streammer.AppendPool("2409:8a62:f28:7e40:3577:d024:d308:6555");
+  streammer.AppendPool("Your IPv6 Address Here");
   //-------
   if (role != 2) {   // 1 render
     AudioRender render(deviceInfo);
