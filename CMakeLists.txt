@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(voice_broadcast VERSION 0.1.0 LANGUAGES C CXX)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++")
+set(CMAKE_EXE_LINKER_FLAGS "-lc++abi")
+aux_source_directory(./src DIR_SRC)
+aux_source_directory(C:/llvm/include DIR_INCLUDE)
+# aux_source_directory(C:/llvm/lib DIR_LIB)
+add_executable(voice_broadcast ${DIR_SRC})
+add_compile_options(-std=c++11)
+include_directories(${DIR_INCLUDE})
+# link_directories(${DIR_LIB})
+target_link_libraries(voice_broadcast wsock32 ws2_32)
+
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
